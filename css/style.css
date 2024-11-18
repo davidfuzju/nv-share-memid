@@ -1,0 +1,35 @@
+/* Overlay */
+#poster-overlay {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+  z-index: 9999; /* High z-index to appear on top */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack content vertically */
+}
+
+/* Centered content in the overlay */
+#poster-overlay img {
+  max-width: 90%; /* Responsive width */
+  max-height: 90%; /* Responsive height */
+  user-select: none; /* Disable selection */
+  -webkit-user-select: none; /* Disable selection for Safari */
+  -moz-user-select: none; /* Disable selection for Firefox */
+  -ms-user-select: none; /* Disable selection for IE/Edge */
+  -o-user-select: none; /* Disable selection for Opera */
+  touch-action: none; /* Prevent accidental gestures */
+}
+
+/* Close button under the image, centered */
+#close-overlay {
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  margin-top: 20px; /* Space between image and close button */
+  text-align: center;
+}
