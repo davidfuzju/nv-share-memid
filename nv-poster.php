@@ -33,7 +33,7 @@ function nv_product_poster_enqueue_scripts()
     }
 
     if (!is_product()) {
-        error_log('nv-poster should be used in a single product page.');
+        error_log('nv-share-memid should be used in a single product page.');
         return;
     }
 
@@ -41,8 +41,8 @@ function nv_product_poster_enqueue_scripts()
     $referral_url = nv_get_referral_url();
     wp_enqueue_script('html2canvas', 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', array('jquery'), null, true);
     wp_enqueue_script('qrcode', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js', array('jquery'), null, true);
-    wp_enqueue_script('poster-generator', plugin_dir_url(__FILE__) . 'js/poster-generator.js', array('jquery', 'html2canvas', 'qrcode'), '1.0', true);
-    wp_enqueue_style('poster-generator-style', plugin_dir_url(__FILE__) . 'css/style.css');
+    wp_enqueue_script('share-memid-generator', plugin_dir_url(__FILE__) . 'js/poster-generator.js', array('jquery', 'html2canvas', 'qrcode'), '1.0', true);
+    wp_enqueue_style('share-memid-generator-style', plugin_dir_url(__FILE__) . 'css/style.css');
 
     // get current user
     $current_user = wp_get_current_user();
@@ -52,7 +52,7 @@ function nv_product_poster_enqueue_scripts()
     $referral_code = get_user_meta($current_user_id, 'wrc_ref_code', true);
 
     // Pass product data and referral URL to JavaScript
-    wp_localize_script('poster-generator', 'productData', array(
+    wp_localize_script('share-memid-generator', 'productData', array(
         'name' => $product->get_name(),
         'image' => wp_get_attachment_image_src($product->get_image_id(), 'full')[0],
         'referral_url' => $referral_url,

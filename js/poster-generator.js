@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
     `);
 
   // Set the click event for the close button to remove the overlay and preview image
-  $("#nv-poster-generate-button").on("click", function () {
+  $("#nv-share-memid-generate-button").on("click", function () {
     nv_generatePosterAndPopup(); // Call your function when the button is clicked
   });
 
