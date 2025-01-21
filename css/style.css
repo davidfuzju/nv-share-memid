@@ -15,8 +15,10 @@
 
 /* Centered content in the overlay */
 #poster-overlay img {
-  max-width: 90%; /* Responsive width */
-  max-height: 90%; /* Responsive height */
+  max-width: 90% !important;
+  height: auto !important;
+  max-height: 90% !important;
+  display: block !important;
   user-select: none; /* Disable selection */
   -webkit-user-select: none; /* Disable selection for Safari */
   -moz-user-select: none; /* Disable selection for Firefox */
