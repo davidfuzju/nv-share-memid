@@ -1,3 +1,13 @@
+function isAndroidDevice() {
+  return /Android/i.test(navigator.userAgent);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (isAndroidDevice()) {
+    document.body.classList.add("android-device");
+  }
+});
+
 jQuery(document).ready(function ($) {
   // Append the overlay and close button to the body
   $("body").append(`

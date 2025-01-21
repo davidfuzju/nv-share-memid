@@ -35,3 +35,7 @@
   margin-top: 20px; /* Space between image and close button */
   text-align: center;
 }
+
+body.android-device #poster-overlay {
+  width: 375px !important;
+}

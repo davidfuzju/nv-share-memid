@@ -7,7 +7,7 @@
  * Plugin Name:       NV Share MemID
  * Plugin URI:        https://github.com/davidfuzju/nv-share-memid
  * Description:       Get product information and generate a poster, allowing users to save the image.
- * Version:           1.0.6
+ * Version:           1.0.7
  * Author:            David FU <david.fu.zju@gmail.com>
  * Author URI:        https://github.com/davidfuzju
  * License:           GPL-2.0+
@@ -15,7 +15,7 @@
  * Text Domain:       nv-share-memid
  */
 
-define('NV_POSTER_VERSION', '1.0.6');
+define('NV_POSTER_VERSION', '1.0.7');
 
 // Load necessary scripts after all plugins are loaded
 add_action('plugins_loaded', 'nv_product_poster_initialize');
