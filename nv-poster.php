@@ -7,13 +7,15 @@
  * Plugin Name:       NV Share MemID
  * Plugin URI:        https://github.com/davidfuzju/nv-share-memid
  * Description:       Get product information and generate a poster, allowing users to save the image.
- * Version:           1.0.3
+ * Version:           1.0.4
  * Author:            David FU <david.fu.zju@gmail.com>
  * Author URI:        https://github.com/davidfuzju
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       nv-share-memid
  */
+
+define('NV_POSTER_VERSION', '1.0.4');
 
 // Load necessary scripts after all plugins are loaded
 add_action('plugins_loaded', 'nv_product_poster_initialize');
@@ -39,10 +41,10 @@ function nv_product_poster_enqueue_scripts()
 
     global $product;
     $referral_url = nv_get_referral_url();
-    wp_enqueue_script('html2canvas', 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', array('jquery'), null, true);
-    wp_enqueue_script('qrcode', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js', array('jquery'), null, true);
-    wp_enqueue_script('share-memid-generator', plugin_dir_url(__FILE__) . 'js/poster-generator.js', array('jquery', 'html2canvas', 'qrcode'), '1.0', true);
-    wp_enqueue_style('share-memid-generator-style', plugin_dir_url(__FILE__) . 'css/style.css');
+    wp_enqueue_script('html2canvas', 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', array('jquery'), NV_POSTER_VERSION, true);
+    wp_enqueue_script('qrcode', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js', array('jquery'), NV_POSTER_VERSION, true);
+    wp_enqueue_script('share-memid-generator', plugin_dir_url(__FILE__) . 'js/poster-generator.js', array('jquery', 'html2canvas', 'qrcode'), NV_POSTER_VERSION, true);
+    wp_enqueue_style('share-memid-generator-style', plugin_dir_url(__FILE__) . 'css/style.css', NV_POSTER_VERSION);
 
     // get current user
     $current_user = wp_get_current_user();
