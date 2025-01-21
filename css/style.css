@@ -11,6 +11,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column; /* Stack content vertically */
+  pointer-events: all; /* Ensure it intercepts user interactions */
+  cursor: not-allowed; /* Visual cue for disabled interactions */
 }
 
 /* Centered content in the overlay */
